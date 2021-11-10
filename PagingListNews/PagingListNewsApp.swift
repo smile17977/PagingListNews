@@ -2,7 +2,7 @@
 //  PagingListNewsApp.swift
 //  PagingListNews
 //
-//  Created by 18898505 on 09.11.2021.
+//  Created by KirillPresnyakov on 09.11.2021.
 //
 
 import SwiftUI
