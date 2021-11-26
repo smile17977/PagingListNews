@@ -15,6 +15,10 @@
 		0E2466AB273C1B8D006994EE /* NavigationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2466AA273C1B8D006994EE /* NavigationType.swift */; };
 		0E2466AD273C1BBC006994EE /* CustomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2466AC273C1BBC006994EE /* CustomNavigationView.swift */; };
 		0E2466AF273C1BD5006994EE /* NavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2466AE273C1BD5006994EE /* NavigationViewModel.swift */; };
+		0EBE609B274F630D009855EE /* NewsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBE609A274F630D009855EE /* NewsInteractor.swift */; };
+		0EBE609F274F68AD009855EE /* ServiceLocator in Frameworks */ = {isa = PBXBuildFile; productRef = 0EBE609E274F68AD009855EE /* ServiceLocator */; };
+		0EBE60A1274F6A41009855EE /* Configurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBE60A0274F6A41009855EE /* Configurator.swift */; };
+		0EBE60A5274F7093009855EE /* InjectWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBE60A4274F7093009855EE /* InjectWrapper.swift */; };
 		0ECE19B2273AF88100862243 /* PagingListNewsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECE19B1273AF88100862243 /* PagingListNewsApp.swift */; };
 		0ECE19B4273AF88100862243 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECE19B3273AF88100862243 /* ContentView.swift */; };
 		0ECE19B6273AF88400862243 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ECE19B5273AF88400862243 /* Assets.xcassets */; };
@@ -42,6 +46,10 @@
 		0E2466AA273C1B8D006994EE /* NavigationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationType.swift; sourceTree = "<group>"; };
 		0E2466AC273C1BBC006994EE /* CustomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationView.swift; sourceTree = "<group>"; };
 		0E2466AE273C1BD5006994EE /* NavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewModel.swift; sourceTree = "<group>"; };
+		0EBE6097274F60ED009855EE /* ServiceLocator */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ServiceLocator; sourceTree = SOURCE_ROOT; };
+		0EBE609A274F630D009855EE /* NewsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsInteractor.swift; sourceTree = "<group>"; };
+		0EBE60A0274F6A41009855EE /* Configurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurator.swift; sourceTree = "<group>"; };
+		0EBE60A4274F7093009855EE /* InjectWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectWrapper.swift; sourceTree = "<group>"; };
 		0ECE19AE273AF88100862243 /* PagingListNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PagingListNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ECE19B1273AF88100862243 /* PagingListNewsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingListNewsApp.swift; sourceTree = "<group>"; };
 		0ECE19B3273AF88100862243 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -67,6 +75,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0ECE19CB273B0A3400862243 /* Networking in Frameworks */,
+				0EBE609F274F68AD009855EE /* ServiceLocator in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,10 +113,19 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		0EBE6099274F62EA009855EE /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				0EBE609A274F630D009855EE /* NewsInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 		0ECE19A5273AF88100862243 = {
 			isa = PBXGroup;
 			children = (
 				0ECE19C3273B05C200862243 /* Networking */,
+				0EBE6097274F60ED009855EE /* ServiceLocator */,
 				0ECE19B0273AF88100862243 /* PagingListNews */,
 				0ECE19AF273AF88100862243 /* Products */,
 				0ECE19C9273B0A3400862243 /* Frameworks */,
@@ -125,6 +143,9 @@
 		0ECE19B0273AF88100862243 /* PagingListNews */ = {
 			isa = PBXGroup;
 			children = (
+				0EBE60A0274F6A41009855EE /* Configurator.swift */,
+				0EBE60A4274F7093009855EE /* InjectWrapper.swift */,
+				0EBE6099274F62EA009855EE /* Interactor */,
 				0ECE19B1273AF88100862243 /* PagingListNewsApp.swift */,
 				0ECE19B3273AF88100862243 /* ContentView.swift */,
 				0E2466A0273C1970006994EE /* Navigation */,
@@ -234,6 +255,7 @@
 			name = PagingListNews;
 			packageProductDependencies = (
 				0ECE19CA273B0A3400862243 /* Networking */,
+				0EBE609E274F68AD009855EE /* ServiceLocator */,
 			);
 			productName = PagingListNews;
 			productReference = 0ECE19AE273AF88100862243 /* PagingListNews.app */;
@@ -294,15 +316,18 @@
 				0ECE19D3273B28CE00862243 /* AsyncImageViewModel.swift in Sources */,
 				0E2466AF273C1BD5006994EE /* NavigationViewModel.swift in Sources */,
 				0E2466A9273C1B7C006994EE /* NavigationTransition.swift in Sources */,
+				0EBE609B274F630D009855EE /* NewsInteractor.swift in Sources */,
 				0E2466A5273C1B44006994EE /* ScreenStack.swift in Sources */,
 				0ECE19B4273AF88100862243 /* ContentView.swift in Sources */,
 				0ECE19E2273BBA9A00862243 /* LoadingStateModifier.swift in Sources */,
+				0EBE60A5274F7093009855EE /* InjectWrapper.swift in Sources */,
 				0E2466AD273C1BBC006994EE /* CustomNavigationView.swift in Sources */,
 				0ECE19CD273B27A100862243 /* NewsItemView.swift in Sources */,
 				0E2466A3273C1B22006994EE /* Screen.swift in Sources */,
 				0ECE19D9273BA52100862243 /* NewsDetailsView.swift in Sources */,
 				0ECE19C8273B092200862243 /* NewsViewModel.swift in Sources */,
 				0ECE19C6273B08EB00862243 /* NewsView.swift in Sources */,
+				0EBE60A1274F6A41009855EE /* Configurator.swift in Sources */,
 				0ECE19DC273BAC9000862243 /* EditNewsView.swift in Sources */,
 				0ECE19E4273BF86200862243 /* Navigation.swift in Sources */,
 				0ECE19D1273B28AD00862243 /* AsyncImage.swift in Sources */,
@@ -516,6 +541,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0EBE609E274F68AD009855EE /* ServiceLocator */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ServiceLocator;
+		};
 		0ECE19CA273B0A3400862243 /* Networking */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Networking;

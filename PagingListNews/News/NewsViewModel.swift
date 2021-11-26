@@ -10,6 +10,8 @@ import Networking
 import Combine
 
 final class NewsViewModel: ObservableObject {
+    @Injected var interactor: NewsInteractor?
+    
     @Published var news = [Article]()
     @Published var categories: [String] = ["Tesla", "Ford"]
     @Published var startDate: Date = Date().advanced(by: -3600 * 24 * 7)
@@ -53,16 +55,14 @@ final class NewsViewModel: ObservableObject {
     private func loadNews(completion: @escaping ([Article]) -> Void) {
         isPageLoading = true
         
-        ArticlesAPI
-            .everythingGet(
-                q: categories[selection],
-                from: "\(startDate)",
-                sortBy: "publishedAt",
-                language: "ru",
-                apiKey: "2ccd3241ea7d46578c96d5643dc188af",
-                page: page) { data, _ in
-                    completion(data?.articles ?? [])
-                }
+        interactor?.fetchNews(
+            category: categories[selection],
+            startDate: startDate,
+            page: page,
+            completion: { models in
+                completion(models)
+            }
+        )
     }
     
     private func loadAnotherCategory() {

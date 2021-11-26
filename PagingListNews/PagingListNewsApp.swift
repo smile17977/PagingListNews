@@ -12,6 +12,9 @@ struct PagingListNewsApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onAppear {
+                    Configurator.shared.setup()
+                }
         }
     }
 }
