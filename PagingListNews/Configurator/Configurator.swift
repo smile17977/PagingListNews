@@ -18,5 +18,7 @@ final class Configurator {
     
    private func registerServices() {
        serviceLocator.addService(service: NewsInteractor())
+       serviceLocator.addService(service: RealmRepository())
+       serviceLocator.addService(service: ExchangeRateInteractor())
     }
 }

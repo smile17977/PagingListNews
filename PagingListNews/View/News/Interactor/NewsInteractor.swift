@@ -2,7 +2,7 @@
 //  NewsInteractor.swift
 //  PagingListNews
 //
-//  Created by 18898505 on 25.11.2021.
+//  Created by KirillPresnyakov on 25.11.2021.
 //
 
 import Foundation
